@@ -1,18 +1,23 @@
 import React from 'react'
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export default function CardRepo() {
+export default function CardRepo({repo}) {
+  console.log("ini props => ", repo);
   return (
-    <div className='p-3'>
-    <Card>
+      <Col>
+      <Card>
       <Card.Header>
-        <Card.Title>Defa Store</Card.Title>
+        <Card.Title>{repo.name}</Card.Title>
       </Card.Header>
       <Card.Body>
-        <Button variant="primary">Go somewhere</Button>
+        {/* <Button variant="secondary">
+        <a href={repo.svn_url} className={}>Go Github</a>
+        </Button> */}
+        <a href={repo.svn_url} class="btn btn-secondary btn-md " role="button" aria-disabled="true">Go Github</a>
       </Card.Body>
     </Card>
-    </div>
+      </Col>
   )
 }
